@@ -12,7 +12,7 @@ I graduated in 2019 from National Tsing Hua University, where I got my B.S. and 
 
 ## Publications
 
-* Determinizing Crash Behavior with a Verified Snapshot-Consistent Flash Translation Layer. <br>
+* [Determinizing Crash Behavior with a Verified Snapshot-Consistent Flash Translation Layer](assets/papers/scftl.pdf). <br>
   **Yun-Sheng Chang**, Yao Hsiao, Tzu-Chi Lin, Che-Wei Tsao, Chun-Feng Wu, Yuan-Hao Chang, Hsiang-Shang Ko, and Yu-Fang Chen. <br>
   USENIX Symposium on Operating Systems Design and Implementation (OSDI), Virtual Event, November 4–6, 2020.
 
