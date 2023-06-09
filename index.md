@@ -1,5 +1,6 @@
 ---
 header-includes: |
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
   strong {
     font-weight: 600;
