@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>vis-a2</title>
+  <style>
+    html {
+      font-family: Fira Sans;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 50em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+  strong {
+    font-weight: 600;
+  }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="exploratory-data-analysis-6.c85-assignment-2">Exploratory Data
+Analysis (6.C85 Assignment 2)</h1>
+<p>Yun-Sheng Chang (yschang@mit.edu)</p>
+<p>Subtheme: Exploring speculative investment (“flipped properties”)</p>
+<h2 id="overall-analysis-questions">Overall analysis questions</h2>
+<ol type="1">
+<li>What is the overall trend of the housing activity in the City of
+Boston?</li>
+<li>What are the traits of flipped properties and the transactions
+involving them?</li>
+<li>How profitable is flipping?</li>
+<li>How does the investor activity look like?</li>
+</ol>
+<h2 id="discoveries-and-insights">Discoveries and insights</h2>
+<h3 id="dataset">Dataset</h3>
+<p>The dataset used in this analysis includes all residential sales
+transactions in the City of Boston between 2000-2023. It consists of 63
+columns and 49301 rows. Important columns to this analysis include sale
+date, sale price, sale price difference between consecutive transactions
+in percentage, indicator for flipped properties, flip horizon, property
+type, value investor type.</p>
+<p>Some of the transactions has unreasonable/artificial price such as 1
+and 999999999. Thus we remove them from the dataset, and end up with
+49120 rows. There are some other data issues found in the dataset, for
+instance, unreasonable high price percentage difference and negative
+flip horizons. We discuss those issues and how we tackle them in the
+section relevant to them.</p>
+<p>(Credit: The Warren Group)</p>
+<h3 id="overall-housing-activity">Overall housing activity</h3>
+<p>To understand housing activity in the City of Boston between
+2000-2023, we begin with decomposing all the transactions by their
+property type, and plot the housing price trends (i.e., mean price over
+sale date in year) the top-two popular property types as well as the
+overall.</p>
+<p><img src="./img/breakdown-and-price-trend.svg" /></p>
+<p><strong>Figure 1.</strong> In the City of Boston, the main properties
+being traded are condos (more than 90%), followed by, but with a
+significant gap, single-family homes. This is quite different from the
+Homes for Profit reading where the analysis is done on the Greater
+Boston residential area (53.9% for single-family homes and 33% for
+condos). The overall housing price had been increasing over the years
+until 2017, and since then the price seems to be decreasing. In
+contrast, the prices of both single-family homes and condos has been
+consistently increasing, with single-family homes enjoying a sharper
+increase.</p>
+<hr />
+<p>To understand the “hotness” of the housing market, we plot the number
+of all transactions and transactions involving flipped properties over
+years.</p>
+<p><img src="./img/hotness.svg" /></p>
+<p><strong>Figure 2.</strong> The overall housing activity seems
+relatively stable over years, whereas the number of “flipping” spike
+during the years of 2011-2014, and, despite experiencing a gradual drop
+since 2015, remains high compared to years before 2011. These figures
+indicate that flipping has become more or less a common practice in the
+housing market.</p>
+<h3 id="analysis-of-flipped-properties-and-their-transactions">Analysis
+of flipped properties and their transactions</h3>
+<p>To investigate further on flipping, we again decompose the
+transactions, but this time only those that involve “flipped”
+properties, by their property type. We then compare the result with the
+overall activity.</p>
+<p><img src="./img/breakdown-flip-txn.svg" /></p>
+<p><strong>Figure 3.</strong> The percentages of flipping generally
+follows that of the overall activity, with condo on the top with a
+proportion of 86.2%, and followed by single-family homes 3.8%. However,
+the slightly lower ratio in condos and higher in single-family homes
+compared to the overall activity might be explained by the fact that the
+latter has been experiencing a steeper slope in price growth over the
+years than the former, as demonstrated in Figure 1.</p>
+<hr />
+<p>To learn about how “fast” properties are being flipped, we plot the
+flipping horizon, defined as the time elapsed between buying and selling
+the flipped property, for condos and single-family homes, respectively.
+We follow the definition in the metadata that refers to a flipping
+horizon less than six months as “short-term”, between six months to a
+year as “medium-term”, and between one to two years as “long-term”.</p>
+<p>During plotting, we found that some transactions have negative
+horizons. Removing them reduces the number of transaction analyzed in
+this section from 1462 to 1440.</p>
+<p><img src="./img/horizon.svg" /></p>
+<p><strong>Figure 4.</strong> For both flipped condos and single-family
+homes, long-term horizons are the most common choice. Flipped condos has
+similar numbers of short-term and medium-term flippings, whereas flipped
+single-family homes has much more medium-term ones than the
+short-term.</p>
+<hr />
+<p>Next we dive into the housing price of flipped properties. At first
+we tried to analyze all the transactions of interest as a whole, but
+soon found it difficult to do so because of the huge discrepancy in the
+price of properties. We therefore categorized the properties based on
+their price: properties of price &lt; $400K belong to the low-priced
+tier, $400K-1M the medium-priced tier, $1M-100M the high-priced tier. We
+also observed extremely high-priced (&gt; $100M) properties that seem to
+be unrelated to this analysis. Excluding them reduces the total number
+of transactions by 92 and flipped transactions by 1.</p>
+<p><img src="./img/housing-tier.svg" /></p>
+<p><strong>Figure 5.</strong> Flipped transactions has a medium-priced
+ratio similar to that of overall transactions. However, flipped
+transactions, in proportion, involves less low-priced properties
+(flipped 9.1% vs. overall 24.8%) and more high-priced ones (flipped
+46.6% vs. overall 29.2%) in general.</p>
+<p><img src="./img/housing-price.svg" /></p>
+<p><strong>Figure 6.</strong> Within each tier, the mean price of
+flipped properties and that of all properties are close, but with the
+former being slightly higher than the latter across all tiers.</p>
+<h3 id="profit-from-flipped-properties">Profit from flipped
+properties</h3>
+<p>One reasonable hypothesis for the arise in flipping activity in the
+past decade is that flipping is profitable. But how profitable is it? We
+answer this question by first showing the distribution of “flipping”
+profit, in terms of the percentage change in the price of a property
+between consecutive transactions.</p>
+<p><img src="./img/profit-overall.svg" /></p>
+<p><strong>Figure 7.</strong> Most of the profits range from -7% (the
+5th percentile) to 76.5% (the 90th percentile), with the 25th percentile
+= 3.3% and the 75th percentile = 27%.</p>
+<hr />
+<p>To probe into more detail of the profitability of flipped properties,
+we analyze the profit within a greater granularity using the
+categorization based on the flipping horizon and the price of
+properties. We plot the mean price change in percentage within of
+properties in each group.</p>
+<p><img src="./img/profit-category.svg" /></p>
+<p><strong>Figure 8.</strong> Properties with short-term flipped
+properties seem to be slightly more profitable compared to the other
+two. This is particularly surprising as that means the rate of return
+(i.e., profit divided by time elapsed) is even higher. Moreover, the
+number (44% for at most 6 months) is remarkly high. As for the price
+groups, the difference between groups become even more apparent.
+High-priced properties achieve a 56% price increase on average, and
+medium-priced and low-priced 24% and 22%, respectively. This phenomenon
+might explain why a huge portion of flipped properties are high-priced,
+as shown in Figure 5.</p>
+<h3 id="investor-activity">Investor activity</h3>
+<p>Finally, we evalaute the investor activity by the number of
+transactions conducted by investors. We plot the percentages of
+transactions (overall and specific to the flipped ones, respectively)
+made by different kinds of investors, as well as their selling activity
+over time. Investors are categorized by the total purchase amount and
+the number of purchased properties in any five-year period. Detail can
+be found in the reading Homes for Profit.</p>
+<p><img src="./img/seller-investor.svg" /></p>
+<p><strong>Figure 9.</strong> Overall, about 1/3 of properties are sold
+by investors. The number of transactions seems relatively stable, except
+for a brief rise around 2005-2007 before the Great Recession.</p>
+<p><img src="./img/seller-investor-fp.svg" /></p>
+<p><strong>Figure 10.</strong> About half of the flipped properties are
+sold by investors; a ratio exceeds the overall average. Also, a growing
+trend in the number of transactions involving flipped properties
+starting around 2011 suggests that investors are becoming more engaged
+in flipping.</p>
+<hr />
+<p>As mentioned in the Homes for Profit reading, investors conduct more
+cash sales than non-investors. To see if that’s also the case in this
+dataset, we plot the cash sale ratio over time in all transactions and
+then specialized to flipped properties.</p>
+<p><img src="./img/cash.svg" /></p>
+<p><strong>FIgure 11.</strong> Overall, investors have consistently
+exhibited a higher cash sale ratio across years by 7-17%. This
+phenomenon becomes even more drastic when it comes to flipped
+properties: 69% of investors purchase properties to be flipped with
+cash, while only 32% of non-investors do so with cash.</p>
+<h2 id="summary">Summary</h2>
+<p>In this analysis, we investigate the housing activity in the City of
+Boston between 2000-2023, with a focus on “flipping” properties. We
+found that flipping is indeed an active practice, especially for
+properties with a growing trend in price such as condos and
+single-family homes. Depending on many factors, including the property
+type, the flip horizon, and the housing price, flipping can yield quite
+different result. For instance, on average, flipping high-priced
+properties can be more than two times more profitable than lower-priced
+properties. Flipping can be extremely profitable. For instance, the
+average profit one makes by flipping a property after six months is 44%.
+Finally, investors with a large amount of cash are actively using this
+advantage to purchase properties of their interest, perhaps with the
+intention of flipping them rapidly.</p>
+</body>
+</html>
