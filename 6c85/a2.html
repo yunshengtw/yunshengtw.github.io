@@ -204,8 +204,8 @@ section relevant to them.</p>
 <p>To understand housing activity in the City of Boston between
 2000-2023, we begin with decomposing all the transactions by their
 property type, and plot the housing price trends (i.e., mean price over
-sale date in year) the top-two popular property types as well as the
-overall.</p>
+sale date in year) for the top-two popular property types as well as the
+overall trend.</p>
 <p><img src="./img/breakdown-and-price-trend.svg" /></p>
 <p><strong>Figure 1.</strong> In the City of Boston, the main properties
 being traded are condos (more than 90%), followed by, but with a
@@ -254,9 +254,9 @@ horizons. Removing them reduces the number of transaction analyzed in
 this section from 1462 to 1440.</p>
 <p><img src="./img/horizon.svg" /></p>
 <p><strong>Figure 4.</strong> For both flipped condos and single-family
-homes, long-term horizons are the most common choice. Flipped condos has
-similar numbers of short-term and medium-term flippings, whereas flipped
-single-family homes has much more medium-term ones than the
+homes, long-term horizons are the most common choice. Condos have
+similar numbers of short-term and medium-term flipping, whereas
+single-family homes are more likely to be flipped medium-term than
 short-term.</p>
 <hr />
 <p>Next we dive into the housing price of flipped properties. At first
@@ -269,11 +269,11 @@ also observed extremely high-priced (&gt; $100M) properties that seem to
 be unrelated to this analysis. Excluding them reduces the total number
 of transactions by 92 and flipped transactions by 1.</p>
 <p><img src="./img/housing-tier.svg" /></p>
-<p><strong>Figure 5.</strong> Flipped transactions has a medium-priced
+<p><strong>Figure 5.</strong> Flipped transactions have a medium-priced
 ratio similar to that of overall transactions. However, flipped
 transactions, in proportion, involves less low-priced properties
 (flipped 9.1% vs. overall 24.8%) and more high-priced ones (flipped
-46.6% vs. overall 29.2%) in general.</p>
+46.6% vs. overall 29.2%).</p>
 <p><img src="./img/housing-price.svg" /></p>
 <p><strong>Figure 6.</strong> Within each tier, the mean price of
 flipped properties and that of all properties are close, but with the
@@ -287,27 +287,25 @@ profit, in terms of the percentage change in the price of a property
 between consecutive transactions.</p>
 <p><img src="./img/profit-overall.svg" /></p>
 <p><strong>Figure 7.</strong> Most of the profits range from -7% (the
-5th percentile) to 76.5% (the 90th percentile), with the 25th percentile
-= 3.3% and the 75th percentile = 27%.</p>
+10th percentile) to 76.5% (the 90th percentile), with the 25th
+percentile = 3.3% and the 75th percentile = 27%.</p>
 <hr />
 <p>To probe into more detail of the profitability of flipped properties,
-we analyze the profit within a greater granularity using the
-categorization based on the flipping horizon and the price of
-properties. We plot the mean price change in percentage within of
-properties in each group.</p>
+we analyze the profit within a greater granularity categorized by the
+flipping horizon and the property price. We plot the mean price change
+in percentage for each group.</p>
 <p><img src="./img/profit-category.svg" /></p>
-<p><strong>Figure 8.</strong> Properties with short-term flipped
-properties seem to be slightly more profitable compared to the other
-two. This is particularly surprising as that means the rate of return
-(i.e., profit divided by time elapsed) is even higher. Moreover, the
-number (44% for at most 6 months) is remarkly high. As for the price
-groups, the difference between groups become even more apparent.
-High-priced properties achieve a 56% price increase on average, and
-medium-priced and low-priced 24% and 22%, respectively. This phenomenon
-might explain why a huge portion of flipped properties are high-priced,
-as shown in Figure 5.</p>
+<p><strong>Figure 8.</strong> Short-term flipped properties seem to be
+slightly more profitable compared to the other two. This is particularly
+surprising as that means the rate of return (i.e., profit divided by
+time elapsed) is even higher. Moreover, the number (44% for at most 6
+months) is remarkably high. As for the price groups, the difference
+between groups become even more apparent. High-priced properties achieve
+a 56% price increase on average, with medium-priced and low-priced 24%
+and 22%, respectively. This phenomenon might explain why a huge portion
+of flipped properties are high-priced, as shown in Figure 5.</p>
 <h3 id="investor-activity">Investor activity</h3>
-<p>Finally, we evalaute the investor activity by the number of
+<p>Finally, we evaluate the investor activity by the number of
 transactions conducted by investors. We plot the percentages of
 transactions (overall and specific to the flipped ones, respectively)
 made by different kinds of investors, as well as their selling activity
@@ -330,11 +328,11 @@ cash sales than non-investors. To see if that’s also the case in this
 dataset, we plot the cash sale ratio over time in all transactions and
 then specialized to flipped properties.</p>
 <p><img src="./img/cash.svg" /></p>
-<p><strong>FIgure 11.</strong> Overall, investors have consistently
-exhibited a higher cash sale ratio across years by 7-17%. This
-phenomenon becomes even more drastic when it comes to flipped
-properties: 69% of investors purchase properties to be flipped with
-cash, while only 32% of non-investors do so with cash.</p>
+<p><strong>Figure 11.</strong> Overall, investors have consistently
+exhibited a higher cash sale ratio across years by a difference of
+7-17%. This phenomenon becomes even more drastic when it comes to
+flipped properties: 69% of investors purchase properties to be flipped
+with cash, while only 32% of non-investors do so with cash.</p>
 <h2 id="summary">Summary</h2>
 <p>In this analysis, we investigate the housing activity in the City of
 Boston between 2000-2023, with a focus on “flipping” properties. We
