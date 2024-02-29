@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>vis-a3</title>
+  <style>
+    html {
+      font-family: Fira Sans;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 50em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+  strong {
+    font-weight: 600;
+  }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="visualization-design-6.c85-assignment-3">Visualization Design
+(6.C85 Assignment 3)</h1>
+<h2 id="phase-one-sketching-visualizations">Phase One: Sketching
+Visualizations</h2>
+<p><strong>Question</strong>: What are the age and gender demographics
+in 1900 and 2000 in the U.S., and the differences between the years?</p>
+<h3 id="sketch-1">Sketch 1</h3>
+<p><img src="./img/line.jpg" width="500" /></p>
+<p><strong>Figure 1.</strong> A line chart depicting the male and female
+population by age in 1900 and 2000, respectively.</p>
+<h4 id="design-rationale">Design rationale</h4>
+<ul>
+<li>At first I thought a line chart might be a good way to convey the
+overall trend and highlight important points (e.g., annotating the
+gender difference in older groups in 2000). However, it later occurs to
+me that line charts doesn’t seem to be a good fit for categorical data
+(i.e., what does the lines between two dots even mean?)</li>
+<li>One downside of using a single scale for the population of 1900 and
+2000 is that the age distribution and gender difference less trivial for
+the former, as essentially it only uses about half of the chart
+area.</li>
+<li>The separation of males and females makes the gender difference
+obvious. On the other hand, such separation makes it harder to grasp the
+age distribution of the entire population (i.e., the viewers would have
+to mentally sum up the blue line and the red line on their own).</li>
+</ul>
+<h3 id="sketch-2">Sketch 2</h3>
+<p><img src="./img/bar.jpg" width="500" /></p>
+<p><strong>Figure 2.</strong> A bar chart showing the population (in bar
+length) and the gender ratio (in bar color) of each age group in 1900
+and 2000. The density of the strokes in the color map represents the
+color saturation.</p>
+<h4 id="design-rationale-1">Design rationale</h4>
+<ul>
+<li>Bar chart is more natural to represent categorical data.</li>
+<li>Unlike Sketch 1, using different scales for the populations of 1900
+and 2000 makes both distributions clear to the viewers. However, it also
+makes the comparison between the total populations harder to perform. To
+address this, I added an annotation for the total population.</li>
+<li>Compared to Sketch 1 where the gender difference is depicted with
+<em>line distance</em>, using <em>color saturation</em> in this sketch
+seems to be less effective to convey the gender difference in each
+group. Additionally, we lose precision when grouping the differences in
+bins. On the other hand, I do think that color does a better job in
+conveying the overall message (e.g., in 2000, there are slightly more
+males than females in younger groups, and much more females than males
+in older groups).</li>
+<li>One downside of this representation is that it’s hard to see the
+gender ratio for groups with low population (e.g., 90-up in 1900).</li>
+</ul>
+<h3 id="sketch-3">Sketch 3</h3>
+<p><img src="./img/pie.jpg" width="500" /></p>
+<p><strong>Figure 3.</strong> A pie chart showing the population (in
+slice area) and the gender ratio (in slice color) in 1900 and 2000. The
+density of the strokes in the color map represents the color
+saturation.</p>
+<h4 id="design-rationale-2">Design rationale</h4>
+<ul>
+<li>Using two pies of different size makes the difference in total
+population immediately clear.</li>
+<li>One advantage over the first two sketches is that the group
+description (e.g., 0-5) is just beside the corresponding data, making it
+easier to query the population of a specific group.</li>
+<li>Pie charts have an additional advantage that it’s easier to infer
+the cumulative sum (e.g., what percentage of the population falls within
+the age group of 15-50).</li>
+<li>Using <em>area</em> to indicate the population is less effective
+than <em>position</em> as used in Sketch 1 (the line chart) and
+<em>length</em> in Sketch 2 (the bar chart).</li>
+<li>Similarly to Sketch 2, this representation makes it hard to see the
+gender ratio for groups with low population (e.g., 90-up in 1900).</li>
+<li>One crucial downside of the chart is that the overall trend (e.g.,
+population decreases over age faster in 1900 than in 2000, and an
+interesting increase in the 35-45 age group in 2000) becomes much less
+obvious compared to the first two sketches.</li>
+</ul>
+<h3 id="reflection">Reflection</h3>
+<p>One thing I’ve learned while making and assessing the sketches is
+<strong>how the clarity of the messages we wish to convey depends
+heavily on the design choices we make</strong>. For instance, if we’re
+trying to show the difference between populations in 1900 and 2000, then
+a common scale for population as used in Sketch 1 would be preferred;
+however, if we’re trying to show the overall population distribution
+within 1900 and 2000 respectively, then a separate scale as used in
+Sketch 2 would do a better job. For another example, if the precise
+gender difference within an age group is the goal, then Sketch 1 might
+be the best option, as viewers can measure the line distance between a
+pair of blue and red dots; if we want viewers to quickly observe the
+overall age distribution and gender ratio, then Sketch 2 seems to be the
+best fit; if the ability to compute population in a wider range of age
+is what we aim for, then Sketch 3 should facilitate that with the
+ability to combine the pie slices. Another thing I’ve learned is
+<strong>different kinds of information can interfere with each
+other</strong>. For instance, in Sketches 2 and 3, we’ve seen that
+gender ratio becomes unclear in age groups with low population (e.g.,
+90-up in 1900). In this case, population decides how much length or area
+in which gender ratio can be expressed.</p>
+<h2 id="phase-two-final-design">Phase Two: Final Design</h2>
+<p><img src="./img/a3.svg" width="800" /></p>
+<p><strong>Figure 4.</strong> A bar chart showing the population (in bar
+length) and the gender ratio (in bar color) of each age group in 1900
+and 2000.</p>
+<h3 id="design-process-design-decisions">Design Process &amp; Design
+Decisions</h3>
+<p>The goal of this visualization is to reveal the overall age and
+gender demographics in 1900 and 2000 respectively, as well as the
+contrast between the two years. Eventually I based my final design on
+Sketch 2 for it turns out to disclose some interesting facts/trends more
+directly. Concretely, the use of a divergent color scheme makes the
+imbalance of gender ratio among younger and older age groups in 2000
+immediately obvious; the fact that the bars in 1900 shorten more rapidly
+than in 2000 suggests the demographic structures are quite different in
+the two years; the abrupt increase for the 35-50 age groups hints at
+some important events (Baby Boom in this case) happened in the past.</p>
+<p>The final design generally follows Sketch 2 in phase 1, so here I’ll
+simply elaborate on the details and differences. Overall, I followed the
+general style as in the <a
+href="https://github.com/matze/mtheme">mtheme</a> Beamer theme. I chose
+<a href="https://personal.sron.nl/~pault/data/colourschemes.pdf">Paul
+Tol’s color scheme</a>, since it seems most aesthetically pleasing to
+me. However, the default color map seems a bit ambiguous especially for
+the middle two colors, so I tune the color intensity a bit to try to
+make them more distinct. The resulting color map has improved, but still
+not satisfactory. Another design choice is whether the bars should have
+outlines? I think no, as the outlines are not particularly helpful
+except in distinguishing bars in the same age group for 1900 and 2000;
+however, a tiny gap between the two axes would do the work as well. As
+for the text description of the color map, I actually like the one in
+Sketch 2 more, but I haven’t found a way to draw it nicely with
+TikZ/pgfplots, the software used to draw the final design. Finally, I
+added dim grid lines to make the comparison easier to be made.</p>
+<h3 id="reflection-1">Reflection</h3>
+<p>I think creating and evaluating the sketches has indeed helped me
+with the final design. Sketching allows for the visual comparison of
+different design choices in a timely manner. By assessing them, I’m able
+to clarify the trade offs of each design choice, and the messages I
+actually want to convey to the viewers. Sketching also helps in
+strengthening or falsifying my design assumptions (i.e., it looks good
+in my imagination, but how about it on paper?).</p>
+</body>
+</html>
