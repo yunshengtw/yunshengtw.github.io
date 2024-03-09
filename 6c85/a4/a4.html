@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>vis-a4</title>
+  <style>
+    html {
+      font-family: Fira Sans;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 50em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+  strong {
+    font-weight: 600;
+  }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1
+id="persuasive-or-deceptive-visualization-6.c85-assignment-4">Persuasive
+or Deceptive Visualization? (6.C85 Assignment 4)</h1>
+<p>Yun-Sheng Chang (yschang@mit.edu)</p>
+<h2
+id="proposition-gender-inequity-is-a-serious-issue-in-the-u.s.">Proposition:
+Gender inequity is a serious issue in the U.S.</h2>
+<h3 id="for-the-proposition">FOR the Proposition</h3>
+<p><img src="./img/positive.svg" width="800" /></p>
+<p><strong>Figure 1.</strong> Gender inequity manifests in several
+aspects of women’s life in the U.S., including lower doctoral rate,
+lower average salary, prevalent encountering of sexual harassment, and a
+small body of representation in the top political realm.</p>
+<h4 id="design-rationales">Design rationales</h4>
+<p>Scale from fully deceptive (-2), neutral (0), to fully earnest
+(2).</p>
+<ul>
+<li><em>(-1)</em> Using a normalized scale for the x-axis in
+<strong>Education</strong> enlarges the actual difference between men
+and women. In particular, women with doctoral degrees accounts for 1.64%
+of the entire female population and men 2.45%, but after normalization
+the difference is 33%.</li>
+<li><em>(2)</em> Showing a more comprehensive categories of sexual
+harassment and job types in <strong>Life</strong> and
+<strong>Salary</strong>, respectively, has the potential of increasing
+the completeness of the study conducted in each of them.</li>
+<li><em>(1)</em> Including the fact in <strong>Salary</strong> that
+Payscale (i.e., the data source) is used by 59% of Fortune 500 offers a
+more reliable foundation for the source.</li>
+<li><em>(1)</em> Underlining the concrete numeric portion in the text
+description of each aspect convey a sense of scientific rigor.</li>
+<li><em>(0)</em> The main proposition is placed around the middle and
+colored to attract people’s attention. Coloring <em>serious</em> with
+red gives people a cautious sense.</li>
+</ul>
+<h3 id="against-the-proposition">AGAINST the Proposition</h3>
+<p><img src="./img/negative.svg" width="800" /> <strong>Figure
+2.</strong> Gender equity is no longer an issue in the U.S., as
+evidenced by the similarity between men and women in many facets,
+including enrollment rate in all levels of education, salary,
+family-worker proportion, and labor participation rate.</p>
+<h4 id="design-rationales-1">Design rationales</h4>
+<p>Scale from fully deceptive (-2), neutral (0), to fully earnest
+(2).</p>
+<ul>
+<li><em>(-1)</em> Using a scale from 0% to 100% in
+<strong>Education</strong> makes the difference between men and women in
+the doctoral category obscure.</li>
+<li><em>(-2)</em> Reporting the <strong>Salary</strong> in controlled
+groups (i.e., which consider job titles, experience, etc.) gives people
+a false sense that men and women earn similarly. In reality, however,
+men and women distribute quite differently in those groups, and such
+information is completely lost.</li>
+<li><em>(2)</em> Showing historical data in <strong>Life</strong> and
+<strong>Work</strong> gives people a sense that the situation has
+improved over time. Additionally, both of their text descriptions
+mention the situation in the past to create some contrast.</li>
+<li><em>(1)</em> Underlining the key takeaway message in each aspect has
+the potential of conveying the impression that gender equity has indeed
+been achieved in many aspects.</li>
+<li><em>(-2)</em> The title (i.e., gender equity has been solved in the
+U.S.) is a conclusion founded on unilateral and incomplete evidence.
+More specifically, the <strong>Life</strong> and <strong>Work</strong>
+aspects both focus on the quantitative side (i.e., how many women are in
+family and how many working), but miss the qualitative side (e.g., how
+women are treated in family and in work).</li>
+</ul>
+<h2 id="final-reflection">Final Reflection</h2>
+<p>I started out by reading the metadata of each table from the World
+Bank, and chose the proposition about gender inequity because many of
+the columns separate out female and male. At first I expected to find
+evidence of gender inequity quite easily in the given data, but then
+shockingly realized that it seems to point to the opposite
+direction—many quantities such as education enrollment rates for women
+and men are very close in more recent years. Recognizing this, I decided
+to find some external data to support the chosen proposition. I figured
+what seems to be the most often discussed topics in the context of
+gender equity: salary gap and sexual harassment (admittedly, as a male
+graduate student coming up with these isn’t as easy as it might sound,
+given that privilegedly they aren’t really part of my lived experience).
+With those data, making visualizations now turns to the technical side,
+as described below.</p>
+<p>As discussed in the class, many visualization techniques can be
+broadly characterized as either deceptive or earnest. The earnest ones
+in my opinion are easier to identify, because as long as a technique
+requires pulling out more work without distorting the original form it
+can be defined as earnest. The work can include citing a credible
+source, finding more comprehensive data, highlighting the most important
+parts, etc. Deceptive techniques, on the other hand, can sometimes be a
+bit hard to characterize. There are, of course, deceptive techniques
+that are easy to identify. For instance, the salary gap in Figure 2 is
+obviously deceptive: even though the average wages of women and men with
+similar backgrounds are close, women and men do not distribute similarly
+in factors such as job titles and industry types. But there are also
+techniques that I found hard to characterize as deceptive or not. For
+instance, 1.64% of women have doctoral degrees, while 2.45% of men do.
+The absolute difference (i.e., 2.45% - 1.64% = 0.81%) is small, so if we
+draw them on a scale of 0-100%, their difference seems negligible;
+however, the relative difference is huge (i.e., 2.45% / 1.64% = 1.49),
+so a normalized scale would significantly enlarge the difference. I
+found it hard to figure out which is the “right” way (and by
+implication, the other one would be deceptive) of representing the
+difference, mostly because I don’t really know <em>if the difference
+actually matters</em>–if it does matter, then hiding it would be
+deceptive; if it does not, then enlarging it is the crime.</p>
+<p>The example above brings me to the reflection of “what is ethical
+analysis and visualization.” Even though we cannot know a priori whether
+a technique is deceptive in a completely objective manner (e.g., we
+might actually believe the difference between women and men with
+doctoral degrees does matter, but in actuality it does not), but as long
+as a visualization designer has the intent to be honest with themselves
+and others, and keeps an open mind to correcting one’s mistakes, the
+analysis and visualization are ethical.</p>
+</body>
+</html>
