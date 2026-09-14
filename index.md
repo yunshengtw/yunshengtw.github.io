@@ -32,6 +32,12 @@ Liu](https://www.ee.nthu.edu.tw/renshuo/).
 
 ## Publications
 
+* **Verifying a high-performance distributed transaction system
+  using permissioned state machines**.  
+  Yun-Sheng Chang, Joseph Tassarotti, M. Frans Kaashoek, and Nickolai Zeldovich.  
+  *SOSP 2026*  
+  [paper](tulip-sosp26.pdf)
+
 * **Verifying vMVCC, a high-performance transaction library using multi-version concurrency control**.  
   Yun-Sheng Chang, Ralf Jung, Upamanyu Sharma, Joseph Tassarotti, M. Frans Kaashoek, and Nickolai Zeldovich.  
   *OSDI 2023*  
