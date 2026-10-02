@@ -47,7 +47,7 @@ Liu](https://www.ee.nthu.edu.tw/renshuo/).
   [paper](papers/vmvcc-osdi23.pdf) /
   [slides](slides/vmvcc-osdi23-slides.pdf) /
   [code](https://github.com/mit-pdos/vmvcc) /
-  [proof](https://github.com/mit-pdos/perennial/tree/0e9f02e6a99b22e592c9f9c6e3bbbfc5e44888b8/src/program_proof/mvcc)
+  [proof](https://github.com/mit-pdos/perennial/tree/1d0faf33d/src/program_proof/mvcc)
 
 * **Weakly durable high-performance transactions**.  
   Yun-Sheng Chang, Yu-Fang Chen, and Hsiang-Shang Ko.  
