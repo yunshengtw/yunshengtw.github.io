@@ -36,7 +36,7 @@ Liu](https://www.ee.nthu.edu.tw/renshuo/).
   using permissioned state machines**.  
   Yun-Sheng Chang, Joseph Tassarotti, M. Frans Kaashoek, and Nickolai Zeldovich.  
   *SOSP 2026*  
-  [paper](papers/tulip-sosp26.pdf)
+  [paper](papers/tulip-sosp26.pdf) /
   [slides](slides/tulip-sosp26-slides.pdf) /
   [code](https://github.com/mit-pdos/tulip) /
   [proof](https://github.com/mit-pdos/tulip-proof)

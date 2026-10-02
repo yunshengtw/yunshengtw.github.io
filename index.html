@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="pandoc" />
+  <meta name="generator" content="pandoc 3.11" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Yun-Sheng Chang</title>
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     html {
       font-family: Fira Sans;
       color: #1a1a1a;
@@ -39,7 +42,6 @@
       body {
         background-color: transparent;
         color: black;
-        font-size: 12pt;
       }
       p, h2, h3 {
         orphans: 3;
@@ -59,6 +61,10 @@
       color: #1a1a1a;
     }
     img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
       max-width: 100%;
     }
     h1, h2, h3, h4, h5, h6 {
@@ -85,6 +91,7 @@
       color: #606060;
     }
     code {
+      white-space: pre-wrap;
       font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
       font-size: 85%;
       margin: 0;
@@ -104,8 +111,8 @@
      overflow: visible;
     }
     hr {
-      background-color: #1a1a1a;
       border: none;
+      border-top: 1px solid #1a1a1a;
       height: 1px;
       margin: 1em 0;
     }
@@ -148,28 +155,26 @@
     #TOC a:not(:hover) {
       text-decoration: none;
     }
-    code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-  strong {
-    font-weight: 600;
-  }
-  </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
+  <p><link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style> strong { font-weight: 600; } </style></p>
 </head>
 <body>
 <h1 id="yun-sheng-chang">Yun-Sheng Chang</h1>
@@ -193,11 +198,15 @@ I got my B.S. and M.S. degrees in Electrical Engineering. My advisor was
 <a href="https://www.ee.nthu.edu.tw/renshuo/">Ren-Shuo Liu</a>.</p>
 <h2 id="publications">Publications</h2>
 <ul>
-<li><p><strong>Verifying a high-performance distributed transaction system
-using permissioned state machines</strong>.<br />
-Yun-Sheng Chang, Joseph Tassarotti, M. Frans Kaashoek, and Nickolai Zeldovich.<br />
+<li><p><strong>Verifying a high-performance distributed transaction
+system using permissioned state machines</strong>.<br />
+Yun-Sheng Chang, Joseph Tassarotti, M. Frans Kaashoek, and Nickolai
+Zeldovich.<br />
 <em>SOSP 2026</em><br />
-<a href="tulip-sosp26.pdf">paper</a></p></li>
+<a href="papers/tulip-sosp26.pdf">paper</a> / <a
+href="slides/tulip-sosp26-slides.pdf">slides</a> / <a
+href="https://github.com/mit-pdos/tulip">code</a> / <a
+href="https://github.com/mit-pdos/tulip-proof">proof</a></p></li>
 <li><p><strong>Verifying vMVCC, a high-performance transaction library
 using multi-version concurrency control</strong>.<br />
 Yun-Sheng Chang, Ralf Jung, Upamanyu Sharma, Joseph Tassarotti, M. Frans
@@ -206,7 +215,7 @@ Kaashoek, and Nickolai Zeldovich.<br />
 <a href="papers/vmvcc-osdi23.pdf">paper</a> / <a
 href="slides/vmvcc-osdi23-slides.pdf">slides</a> / <a
 href="https://github.com/mit-pdos/vmvcc">code</a> / <a
-href="https://github.com/mit-pdos/perennial/tree/master/src/program_proof/mvcc">proof</a></p></li>
+href="https://github.com/mit-pdos/perennial/tree/1d0faf33d/src/program_proof/mvcc">proof</a></p></li>
 <li><p><strong>Weakly durable high-performance
 transactions</strong>.<br />
 Yun-Sheng Chang, Yu-Fang Chen, and Hsiang-Shang Ko.<br />
